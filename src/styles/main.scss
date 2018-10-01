@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+// mixins
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile{
+  @media (max-width: #{$tablet-width - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+span[role=img] {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  display: inline-block;
+  width: 30px;
+  padding: 5px 0;
+}
+
+.fr {
+  float: right;
+}
+
+.profile{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.user {
+  padding: 0.5em 0.75em;
+}
+
+button{
+  background-color: #9561e2;
+  line-height: 1.15;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  border: none;
+  color: #fff;
+  border-radius: 0.2em;
+  background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+  &:hover{
+      background-position: right center;
+  }
+}
+
+.posts {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  height: 100%;
+  h2 {
+    text-transform: capitalize;
+    font-size: 1.3em;
+  }
+}
+
+.card {
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,.11), 0 5px 15px 0 rgba(0,0,0,.08);
+  border-width: 1px;
+  border-color: #dae1e7;
+  background-color: #fff;
+  border-radius: .5rem;
+  width: 20%;
+  @include mobile {
+    width: 41%;
+  }
+  padding: 0.5em 1em;
+  margin: 0.48em;
+}
