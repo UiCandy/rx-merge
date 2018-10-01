@@ -1,0 +1,19 @@
+# Misc
+*~
+*#
+.#*
+.DS_Store
+
+# Logs
+*.log
+
+# npm & yarn
+node_modules/
+.yarn-integrity
+yarn-debug.log*
+yarn-error.log*
+yarn.lock*
+package-lock.json
+/build*
+/build/*
+
