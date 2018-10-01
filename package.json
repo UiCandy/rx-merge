@@ -4,8 +4,77 @@
   "description": "A simple app to display data from two streams",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=development webpack-serve --open",
+    "build": "cross-env NODE_ENV=production webpack",
+    "test": "",
+    "precommit": "lint-staged"
   },
+  "lint-staged": {
+    "*.{js,jsx,css,md}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": "",
   "author": "Rishav Sharma",
-  "license": "ISC"
+  "license": "ISC",
+  "private": false,
+  "engines": {
+    "node": ">=8",
+    "npm": ">=3"
+  },
+  "dependencies": {
+    "prop-types": "15.6.2",
+    "react": "16.5.1",
+    "react-dom": "16.5.1",
+    "react-hot-loader": "4.3.8"
+  },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.1.0",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
+    "@babel/plugin-proposal-decorators": "7.1.0",
+    "@babel/plugin-proposal-export-namespace-from": "7.0.0",
+    "@babel/plugin-proposal-function-sent": "7.1.0",
+    "@babel/plugin-proposal-json-strings": "7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/plugin-syntax-import-meta": "7.0.0",
+    "@babel/plugin-transform-runtime": "7.1.0",
+    "@babel/polyfill": "7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "@babel/register": "7.0.0",
+    "@babel/runtime": "7.0.0",
+    "babel-core": "7.0.0-beta.3",
+    "babel-eslint": "9.0.0",
+    "babel-loader": "8.0.2",
+    "babel-plugin-lodash": "3.3.4",
+    "browserslist": "4.1.1",
+    "clean-webpack-plugin": "0.1.19",
+    "cross-env": "5.2.0",
+    "css-loader": "1.0.0",
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-loader": "2.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-react": "7.11.1",
+    "eslint-watch": "4.0.2",
+    "file-loader": "2.0.0",
+    "html-webpack-plugin": "3.2.0",
+    "lint-staged": "7.2.2",
+    "mini-css-extract-plugin": "0.4.2",
+    "node-sass": "4.9.3",
+    "pretty-quick": "1.6.0",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.0",
+    "webpack": "4.19.1",
+    "webpack-cli": "3.1.0",
+    "webpack-merge": "4.1.4",
+    "webpack-serve": "2.0.2"
+  }
 }
